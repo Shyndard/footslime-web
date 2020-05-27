@@ -8,6 +8,8 @@ import { HomeComponent } from './route/home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { RegistrationComponent } from './route/registration/registration.component';
 import { RulesComponent } from './route/rules/rules.component';
+import { FormsModule } from '@angular/forms';
+import { TeamsComponent } from './route/teams/teams.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,9 @@ import { RulesComponent } from './route/rules/rules.component';
     NavbarComponent,
     RegistrationComponent,
     RulesComponent,
+    TeamsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

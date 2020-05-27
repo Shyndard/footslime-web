@@ -1,0 +1,129 @@
+<div
+  class="container rounded mt-5"
+  style="
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+    opacity: 0.9;
+  "
+>
+  <div class="text-center" *ngIf="isStage('already-register')">
+    <h3>Votre inscription est déjà enregistrée, pas besoin d'une autre</h3>
+    <strong
+      >Si vous avez un problème, contactez un membre du staff over2craft</strong
+    >
+    <img src="assets/img/zombie.gif" />
+  </div>
+  <div class="text-center" *ngIf="isStage('verification')">
+    <h1>Vérification en cours, patientez un instant...</h1>
+    <img src="assets/img/zombie.gif" />
+  </div>
+  <div class="text-center" *ngIf="isStage('success')">
+    <h3 style="color: green;">
+      Inscription confirmée, bienvenue dans la compétition {{ teamName }} !
+    </h3>
+    <h5>
+      Rendez-vous le 7 Juin 2020 dès 16h. Si vous avez des questions, contactez
+      le staff d'over2craft
+    </h5>
+    <img src="assets/img/zombie.gif" />
+  </div>
+  <div class="text-center" *ngIf="isStage('fail')">
+    <h1>Oupsi, un problème est survenu !</h1>
+    <h3 style="color: red;">{{ errorMessage }}</h3>
+    <img src="assets/img/zombie.gif" />
+  </div>
+  <div *ngIf="isStage('form')">
+    <h1 class="text-center">Inscription par équipe</h1>
+    <hr />
+    <form>
+      <div class="form-group">
+        <label>Nom d'équipe</label>
+        <input
+          [(ngModel)]="teamName"
+          type="text"
+          class="form-control"
+          placeholder="Nom d'équipe"
+          name="teamName"
+          required
+          minlength="3"
+          maxlength="20"
+        />
+      </div>
+      <hr />
+      <div class="form-group">
+        <label>1er équipier</label>
+        <input
+          [(ngModel)]="firstUser"
+          name="first-user"
+          type="text"
+          class="form-control"
+          placeholder="pseudo"
+          required
+          minlength="3"
+          maxlength="16"
+        />
+      </div>
+      <div class="form-group">
+        <label>2eme équipier</label>
+        <input
+          [(ngModel)]="secondUser"
+          name="second-user"
+          type="text"
+          class="form-control"
+          placeholder="pseudo"
+          required
+          minlength="3"
+          maxlength="16"
+        />
+      </div>
+      <div class="form-group">
+        <label>3ème équipier</label>
+        <input
+          [(ngModel)]="thirdUser"
+          name="third-user"
+          type="text"
+          class="form-control"
+          placeholder="pseudo"
+          required
+          minlength="3"
+          maxlength="16"
+        />
+      </div>
+      <div class="form-group">
+        <label>4ème équipier (optionnel)</label>
+        <input
+          [(ngModel)]="optionalUser"
+          name="optional-user"
+          type="text"
+          class="form-control"
+          placeholder="pseudo"
+          minlength="3"
+          maxlength="16"
+        />
+      </div>
+      <hr />
+      <div class="form-check">
+        <input
+          name="acceptRules"
+          type="checkbox"
+          class="form-check-input"
+          required
+          [(ngModel)]="acceptRules"
+        />
+        <label class="form-check-label"
+          >Je valide l'inscription et accepte
+          <a [routerLink]="['/rules']">les règles du tournoi</a>.</label
+        >
+      </div>
+      <hr />
+      <button type="submit" (click)="registerTeam()" class="btn btn-primary">
+        Valider l'inscription</button
+      ><span
+        *ngIf="errorMessage && errorMessage.length > 0"
+        style="color: red;"
+        >{{ errorMessage }}</span
+      >
+    </form>
+  </div>
+</div>

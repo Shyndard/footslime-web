@@ -14,17 +14,19 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/register-teams']"
+          >Equipes inscrites</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/rules']">Règlement</a>
+      </li>
+      <li class="nav-item">
         <strong
           ><a class="nav-link" [routerLink]="['/registration']"
             >Inscriptions</a
           ></strong
         >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/teams']">Equipes inscrites</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/rules']">Réglement</a>
       </li>
     </ul>
   </div>
