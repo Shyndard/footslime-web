@@ -20,6 +20,8 @@ steps:
         from_secret: DOCKER_REPOSITORY
       tags: latest
     depends_on: [build]
+    when:
+      branch: master
   - name: deploy
     image: caprover/cli-caprover:latest
     commands:
@@ -34,3 +36,5 @@ steps:
       DOCKER_REPOSITORY:
         from_secret: DOCKER_REPOSITORY
     depends_on: [docker]
+    when:
+      branch: master
