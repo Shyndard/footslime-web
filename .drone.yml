@@ -7,7 +7,7 @@ steps:
     image: node:12-alpine
     commands:
       - npm install
-      - npm install @angular/cli
+      - npm install -g @angular/cli
       - ng build --prod
   - name: deploy
     image: caprover/cli-caprover:latest
