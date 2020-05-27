@@ -19,9 +19,9 @@ steps:
     environment:
       DOCKER_USERNAME:
         from_secret: DOCKER_USERNAME
-        DOCKER_PASSWORD:
+      DOCKER_PASSWORD:
         from_secret: DOCKER_PASSWORD
-        DOCKER_REPOSITORY:
+      DOCKER_REPOSITORY:
         from_secret: DOCKER_REPOSITORY
     depends_on: [build]
   - name: deploy
