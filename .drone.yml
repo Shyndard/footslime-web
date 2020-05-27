@@ -12,17 +12,13 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
-      username: $DOCKER_USERNAME
-      password: $DOCKER_PASSWORD
-      repo: $DOCKER_REPOSITORY
-      tags: latest
-    environment:
-      DOCKER_USERNAME:
+      username:
         from_secret: DOCKER_USERNAME
-      DOCKER_PASSWORD:
+      password:
         from_secret: DOCKER_PASSWORD
-      DOCKER_REPOSITORY:
+      repo:
         from_secret: DOCKER_REPOSITORY
+      tags: latest
     depends_on: [build]
   - name: deploy
     image: caprover/cli-caprover:latest
