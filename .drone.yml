@@ -1,0 +1,25 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: build
+    image: node:12-alpine
+    commands:
+      - npm install
+      - npm install @angular/cli
+      - ng build --prod
+  - name: deploy
+    image: caprover/cli-caprover:latest
+    commands:
+      - npx caprover deploy -h $CAPROVER_DOMAIN -p $CAPROVER_PASSWORD -b master -a $CAPROVER_APPNAME
+    environment:
+      CAPROVER_DOMAIN:
+        from_secret: CAPROVER_DOMAIN
+      CAPROVER_APPNAME:
+        from_secret: CAPROVER_APPNAME
+      CAPROVER_PASSWORD:
+        from_secret: CAPROVER_PASSWORD
+    depends_on: [build]
+#    when:
+#      branch: master
