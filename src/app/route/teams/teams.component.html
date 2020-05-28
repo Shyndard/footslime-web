@@ -9,26 +9,30 @@
 >
   <h1 class="text-center">Equipes inscrites</h1>
   <hr />
-  <table class="table table-striped table-dark">
-    <thead>
-      <tr>
-        <th scope="col">Equipe</th>
-        <th scope="col">Joueur 1</th>
-        <th scope="col">Joueur 2</th>
-        <th scope="col">Joueur 3</th>
-        <th scope="col">Joueur 4</th>
-        <th scope="col">Poule</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let team of teams">
-        <td>{{ team.name }}</td>
-        <td>{{ team.players.length > 0 ? team.players[0].name : "" }}</td>
-        <td>{{ team.players.length > 1 ? team.players[1].name : "" }}</td>
-        <td>{{ team.players.length > 2 ? team.players[2].name : "" }}</td>
-        <td>{{ team.players.length > 3 ? team.players[3].name : "" }}</td>
-        <td>Non attribuée</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Equipe</th>
+          <th scope="col">Joueur 1</th>
+          <th scope="col">Joueur 2</th>
+          <th scope="col">Joueur 3</th>
+          <th scope="col">Joueur 4</th>
+          <th scope="col">Joueur remplaçant</th>
+          <th scope="col">Poule</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let team of teams">
+          <td>{{ team.name }}</td>
+          <td>{{ team.players.length > 0 ? team.players[0].name : "" }}</td>
+          <td>{{ team.players.length > 1 ? team.players[1].name : "" }}</td>
+          <td>{{ team.players.length > 2 ? team.players[2].name : "" }}</td>
+          <td>{{ team.players.length > 3 ? team.players[3].name : "" }}</td>
+          <td>{{ team.players.length > 4 ? team.players[4].name : "" }}</td>
+          <td>Non attribuée</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

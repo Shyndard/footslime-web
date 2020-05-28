@@ -1,5 +1,5 @@
 <div
-  class="container rounded mt-5"
+  class="container rounded mt-5 mb-5"
   style="
     padding-top: 5px;
     padding-bottom: 5px;
@@ -54,7 +54,7 @@
       <div class="form-group">
         <label>1er équipier</label>
         <input
-          [(ngModel)]="firstUser"
+          [(ngModel)]="usersnames[0]"
           name="first-user"
           type="text"
           class="form-control"
@@ -67,7 +67,7 @@
       <div class="form-group">
         <label>2eme équipier</label>
         <input
-          [(ngModel)]="secondUser"
+          [(ngModel)]="usersnames[1]"
           name="second-user"
           type="text"
           class="form-control"
@@ -80,7 +80,7 @@
       <div class="form-group">
         <label>3ème équipier</label>
         <input
-          [(ngModel)]="thirdUser"
+          [(ngModel)]="usersnames[2]"
           name="third-user"
           type="text"
           class="form-control"
@@ -91,9 +91,21 @@
         />
       </div>
       <div class="form-group">
-        <label>4ème équipier (optionnel)</label>
+        <label>4ème équipier</label>
         <input
-          [(ngModel)]="optionalUser"
+          [(ngModel)]="usersnames[3]"
+          name="optional-user"
+          type="text"
+          class="form-control"
+          placeholder="pseudo"
+          minlength="3"
+          maxlength="16"
+        />
+      </div>
+      <div class="form-group">
+        <label>Remplaçant (optionnel)</label>
+        <input
+          [(ngModel)]="usersnames[4]"
           name="optional-user"
           type="text"
           class="form-control"
