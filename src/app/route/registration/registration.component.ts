@@ -35,7 +35,8 @@ export class RegistrationComponent {
       this.errorMessage =
         "Veuillez saisir un nom d'équipe correct (de 3 à 20 charactères).";
     } else if (!this.haveFirstCount(this.usersnames, this.MIN_TEAM_SIZE)) {
-      this.errorMessage = 'Veuillez saisir les trois premiers pseudos.';
+      this.errorMessage =
+        'Veuillez saisir les ' + this.MIN_TEAM_SIZE + ' premiers pseudos.';
     } else if (this.haveDuplicateKey(this.usersnames)) {
       this.errorMessage = 'Veuillez saisir des pseudos différents.';
     } else if (this.haveBadUsernames(this.usersnames, this.MIN_TEAM_SIZE)) {
@@ -46,7 +47,10 @@ export class RegistrationComponent {
     } else {
       this.errorMessage = '';
       this.stage = 'verification';
-      this.createTeam(this.teamName, this.usersnames);
+      this.createTeam(
+        this.teamName,
+        this.usersnames.filter((name) => name && name.length > 0)
+      );
     }
   }
 
