@@ -16,14 +16,14 @@ export class RegistrationComponent {
 
   regex: RegExp;
 
-  private MIN_TEAM_SIZE = 4;
+  private MIN_TEAM_SIZE = 3;
   private MAX_TEAM_SIZE = 5;
 
   constructor(private teamService: TeamService) {
     this.usersnames = new Array(this.MAX_TEAM_SIZE);
     this.regex = new RegExp('^[a-zA-Z0-9]*$');
     const register = localStorage.getItem('register');
-    if (register && this.usersnames.length == 0) {
+    if (register && register.length > 0) {
       this.stage = 'already-register';
     } else {
       this.stage = 'form';
