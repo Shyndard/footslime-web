@@ -21,7 +21,7 @@ export class RegistrationComponent {
 
   constructor(private teamService: TeamService) {
     this.usersnames = new Array(this.MAX_TEAM_SIZE);
-    this.regex = new RegExp('^[a-zA-Z0-9]*$');
+    this.regex = new RegExp('^[a-zA-Z0-9_]*$');
     const register = localStorage.getItem('register');
     if (register && register.length > 0) {
       this.stage = 'already-register';
@@ -56,7 +56,6 @@ export class RegistrationComponent {
 
   private haveFirstCount(usernames: String[], indexLimit: number): boolean {
     for (let i = 0; i < indexLimit; i++) {
-      console.log(i);
       if (!usernames[i]) {
         return false;
       }
@@ -76,7 +75,7 @@ export class RegistrationComponent {
     for (let i = 0; i < indexLimit; i++) {
       if (
         usernames[i].length < 3 ||
-        usernames.length > 16 ||
+        usernames[i].length > 16 ||
         !usernames[i].match(this.regex)
       ) {
         return true;
