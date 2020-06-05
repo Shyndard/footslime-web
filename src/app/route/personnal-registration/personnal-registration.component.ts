@@ -59,6 +59,11 @@ export class PersonnalRegistrationComponent {
         } else if (error.status === 409) {
           this.errorMessage =
             'Conflit détecté ! Il semble que vous soyez déjà inscrit.';
+        } else {
+          this.errorMessage =
+            'Une erreur est survenue ( code ' +
+            error.status +
+            ') contactez un membre du staff.';
         }
       }
     );

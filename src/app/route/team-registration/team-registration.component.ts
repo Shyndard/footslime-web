@@ -104,6 +104,11 @@ export class TeamRegistrationComponent {
         } else if (error.status === 409) {
           this.errorMessage =
             "Conflit détecté ! Vérifiez que le nom d'équipe est disponible.";
+        } else {
+          this.errorMessage =
+            'Une erreur est survenue ( code ' +
+            error.status +
+            ') contactez un membre du staff.';
         }
       }
     );
