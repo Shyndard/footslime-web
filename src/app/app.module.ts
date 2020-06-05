@@ -10,6 +10,8 @@ import { RegistrationComponent } from './route/registration/registration.compone
 import { RulesComponent } from './route/rules/rules.component';
 import { FormsModule } from '@angular/forms';
 import { TeamsComponent } from './route/teams/teams.component';
+import { TeamRegistrationComponent } from './route/team-registration/team-registration.component';
+import { PersonnalRegistrationComponent } from './route/personnal-registration/personnal-registration.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { TeamsComponent } from './route/teams/teams.component';
     RegistrationComponent,
     RulesComponent,
     TeamsComponent,
+    TeamRegistrationComponent,
+    PersonnalRegistrationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
