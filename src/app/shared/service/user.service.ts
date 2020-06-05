@@ -7,12 +7,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  private usersBaseUrl = 'https://footslime-api.o2c.shyndard.eu/users';
+  private usersBaseUrl = 'https://footslime-api.o2c.shyndard.eu/players';
 
   constructor(private http: HttpClient) {}
 
   createUser(username: String): Observable<User> {
-    return this.http.post<User>(this.usersBaseUrl, { name: username });
+    return this.http.post<User>(this.usersBaseUrl + '/autocreateteam=true', {
+      name: username,
+    });
   }
 
   getAll(): Observable<User[]> {

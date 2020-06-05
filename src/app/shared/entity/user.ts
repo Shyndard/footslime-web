@@ -1,4 +1,4 @@
 export interface User {
   name: String;
-  team: String;
+  teamId: String;
 }
