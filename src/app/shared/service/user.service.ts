@@ -12,7 +12,7 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   createUser(username: String): Observable<User> {
-    return this.http.post<User>(this.usersBaseUrl + '/autocreateteam=true', {
+    return this.http.post<User>(this.usersBaseUrl + '?autocreateteam=true', {
       username,
     });
   }
