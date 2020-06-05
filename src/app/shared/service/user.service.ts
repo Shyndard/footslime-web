@@ -13,7 +13,7 @@ export class UserService {
 
   createUser(username: String): Observable<User> {
     return this.http.post<User>(this.usersBaseUrl + '?autocreateteam=true', {
-      username,
+      name: username,
     });
   }
 
