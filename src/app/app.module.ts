@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { TeamsComponent } from './route/teams/teams.component';
 import { TeamRegistrationComponent } from './route/team-registration/team-registration.component';
 import { PersonnalRegistrationComponent } from './route/personnal-registration/personnal-registration.component';
+import { LiveComponent } from './route/live/live.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PersonnalRegistrationComponent } from './route/personnal-registration/p
     TeamsComponent,
     TeamRegistrationComponent,
     PersonnalRegistrationComponent,
+    LiveComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
