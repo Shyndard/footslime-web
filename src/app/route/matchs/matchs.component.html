@@ -1,0 +1,42 @@
+<div
+  class="container rounded mt-5 mb-5"
+  style="
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+    opacity: 0.9;
+  "
+>
+<div *ngIf="!matchs || matchs.length === 0; else showData">
+  <div class="alert alert-danger" role="alert">
+    Les matchs apparaitront à la fin des inscriptions.
+  </div>
+</div>
+<ng-template #showData>
+  <div class="text-center">
+    <h1 >Matchs 🔴</h1>
+    <h5 >Les données sont actualisées en temps réel</h5>
+  </div>
+  <hr/>
+  <div class="table-responsive">
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Equipe bleue</th>
+          <th scope="col">Equipe rouge</th>
+          <th scope="col">Scores</th>
+          <th scope="col">Vainqueur</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let match of matchs" [className]=loadClass(match)>
+          <td>{{ match.blueTeamName }}</td>
+          <td>{{ match.redTeamName }}</td>
+          <td>{{ match.startAt == null ? '' : match.blueTeamPoint + ' - ' + match.redTeamPoint}}</td>
+          <td>{{ match.endAt == null ? '' : match.redTeamPoint > match.blueTeamPoint ? match.redTeamName : match.blueTeamName}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>
+</div>

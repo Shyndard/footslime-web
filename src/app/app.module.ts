@@ -13,6 +13,8 @@ import { TeamsComponent } from './route/teams/teams.component';
 import { TeamRegistrationComponent } from './route/team-registration/team-registration.component';
 import { PersonnalRegistrationComponent } from './route/personnal-registration/personnal-registration.component';
 import { LiveComponent } from './route/live/live.component';
+import { MatchsComponent } from './route/matchs/matchs.component';
+import { MatchInProgressComponent } from './route/match-in-progress/match-in-progress.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { LiveComponent } from './route/live/live.component';
     TeamRegistrationComponent,
     PersonnalRegistrationComponent,
     LiveComponent,
+    MatchsComponent,
+    MatchInProgressComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
